@@ -12,7 +12,7 @@ var s3NamesPath = s3DataPath + "names";
 var s3StatsPath = s3DataPath + "stats"; 
 
 var myDomain = process.env.fpDomain; //something like smallpict.com
-var myPort = process.env.fpServerPort; //what port should the server run on?
+var myPort = process.env.PORT; //what port should the server run on?  Heroku sets this.
 
 var maxChanges = 100;
 var nameChangesFile = "changes.json";

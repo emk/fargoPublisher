@@ -88,7 +88,7 @@ For my deployment I went with (Unix shell commands):
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. export fpDomain=smallpict.com
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. export fpServerPort=80
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. export PORT=80
 
 
 
@@ -120,6 +120,21 @@ Set environment variables with your S3 paths and the domain you're using.
 
 The app is in package.js. package.json already contains all the info that node needs to run it.
 
+
+### How to deploy to Heroku (alternative approach)
+
+Alternatively, you can run Fargo Publisher on Heroku.  You'll need two things to get started:
+
+1. A working copy of git.
+2. [Heroku Toolbelt](https://toolbelt.heroku.com/).
+
+Once these are set up, `cd` into your Fargo Publisher directory and run:
+
+    heroku create my-unique-app-name
+    heroku config:set fpHostingPath=/beta.fargo.io/users/ fpDataPath=/beta.fargo.io/data/ fpDomain=smallpict.com AWS_ACCESS_KEY_ID=... AWS_SECRET_ACCESS_KEY=...
+    git push heroku master
+
+Be sure to replace the configuration examples above with the correct values.  That should be enough to get you started!
 
 
 ### Notes
